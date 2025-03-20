@@ -78,12 +78,14 @@ export const LocationPage: React.FC = () => {
                 </StyledFLocationPageTitle>
 
                 <TrustPageOptionsQuoteButton
-                    onClick={() => setOpenQuoteDialog(true)}
+                    
+                    to=" https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7"
                     sx={{
                         ['@media (max-width: 1000px)']: {
                             height: '50px'
                         }
                     }}
+                    target='_blank'
                 >
                     Get a quote
                 </TrustPageOptionsQuoteButton>

@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { Button, styled } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export const StyledFAQPage = styled('section')(() => ({
@@ -184,5 +184,25 @@ export const StyledFAQLink = styled(Link)(() => ({
 
     ['@media (max-width: 1000px)']: {
         height: '50px',
+    }
+}))
+
+export const StyledFAQTypeSwitch = styled(Button)(() => ({
+    width: '50%',
+    height: 'calc(60px)',
+    background: 'transparent',
+    color: '#00302E',
+    fontWeight: 700,
+    fontSize: '20px',
+    textTransform: 'none',
+    borderRadius: '20px',
+    border: '2px solid #00302E',
+    marginTop: '24px',
+    fontFamily: 'Montserrat, sans-serif',
+
+    ['@media (max-width: 1000px)']: {
+        marginTop: '12px',
+        height: '56px',
+        width: '100%'
     }
 }))

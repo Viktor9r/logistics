@@ -30,25 +30,28 @@ export const MobileBottomBar: React.FC = () => {
     return (
         <MobileBottomContainer
             sx={{
-                // display: location.pathname !== '/' ? 'flex' : topScrollValue > 0 && topScrollValue < window.innerHeight + 70 ? 'none' : 'flex',
-                bottom: topScrollValue > 0 ? 10 : 14
+                display: location.pathname !== '/' ? 'flex' : topScrollValue < 300 ? 'none' : 'flex',
+                bottom: topScrollValue > 0 ? 10 : 30
             }}
         >
             <MobileBottomButton
-                onClick={() => {
-                    setOpenQuoteDialog(true)
-                }}
                 sx={{
                     borderTopLeftRadius: topScrollValue > 0 ? '20px' : 0,
                     borderBottomRightRadius: topScrollValue > 0 ? '20px' : 0,
                 }}
             >
-                Free Quote
+                <Link
+                    to=" https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    target='_blank'
+                >
+                    Free Quote
+                </Link>
             </MobileBottomButton>
 
             <Link
                 style={{ width: '20%', padding: 0, margin: 0 }}
-                to="tel:4378989777"
+                to="tel:8779329272"
             >
                 <MobileBottomButton
                     sx={{

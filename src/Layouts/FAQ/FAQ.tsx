@@ -1,5 +1,5 @@
 import { HeaderIcon, HeaderLink, HeaderPipe } from "../AppHeader/styled"
-import { StyledFAQCellTitle, StyledFAQIconCell, StyledFAQIconCellNumber, StyledFAQPage, StyledFAQPageCellTop, StyledFAQPageCellLeft, StyledFAQPageQuestionsList, StyledFAQPageSubTitle, StyledFAQPageTip, StyledFAQPageTitle, StyledFAQPageTop, StyledFAQPageTopLeft, StyledFAQPageTopRight, StyledFAQPageCell, StyledFAQCellAnswer, StyledFAQLink } from "./styled"
+import { StyledFAQCellTitle, StyledFAQIconCell, StyledFAQIconCellNumber, StyledFAQPage, StyledFAQPageCellTop, StyledFAQPageCellLeft, StyledFAQPageQuestionsList, StyledFAQPageSubTitle, StyledFAQPageTip, StyledFAQPageTitle, StyledFAQPageTop, StyledFAQPageTopLeft, StyledFAQPageTopRight, StyledFAQPageCell, StyledFAQCellAnswer, StyledFAQLink, StyledFAQTypeSwitch } from "./styled"
 import { PhoneIphoneOutlined } from "@mui/icons-material";
 import EmailIcon from '@mui/icons-material/EmailOutlined';
 import { ReactComponent as PlusIcon } from '../../resources/icons/plus.svg';
@@ -18,6 +18,8 @@ export const FAQPage: React.FC<IProps> = ({ questions }) => {
 
     const [showAnswer, setShowAnswer] = useState(false);
     const [openedIds, setOpenedIds] = useState<any>([])
+
+    const [selectedType, setSelectedType] = useState(1)
 
     const addOpenedId = (newId: number) => {
         const newIds = [...openedIds, newId];
@@ -73,7 +75,7 @@ export const FAQPage: React.FC<IProps> = ({ questions }) => {
 
                     <StyledFAQPageTopRight>
                         <HeaderLink
-                            onClick={() => window.location.href = 'mailto:info@fcmmovers.com'}
+                            onClick={() => window.location.href = 'mailto:info@easydispatch.net'}
                             to=''
                         >
                             <HeaderIcon sx={{
@@ -85,13 +87,13 @@ export const FAQPage: React.FC<IProps> = ({ questions }) => {
                             }}>
                                 <EmailIcon />
                             </HeaderIcon>
-                            info@fcmmovers.com
+                            info@easydispatch.net
                         </HeaderLink>
                         {!mobile && (
                             <>
                                 <HeaderPipe />
                                 <HeaderLink
-                                    to='tel:4378989777'
+                                    to='tel:8779329272'
                                 >
                                     <HeaderIcon sx={{
                                         mr: 1,
@@ -102,7 +104,7 @@ export const FAQPage: React.FC<IProps> = ({ questions }) => {
                                     }}>
                                         <PhoneIphoneOutlined />
                                     </HeaderIcon>
-                                    +1 (437) 898-9777
+                                    +1 (877) 932 - 9272
                                 </HeaderLink>
                             </>
                         )}
@@ -110,8 +112,33 @@ export const FAQPage: React.FC<IProps> = ({ questions }) => {
                 </StyledFAQPageTopLeft>
             </StyledFAQPageTop>
 
+            <StyledFAQPageTop sx={{ gap: '20px' }}>
+                <StyledFAQTypeSwitch
+                    onClick={() => setSelectedType(1)}
+                    sx={{
+                        background: selectedType !== 1 ? '#00302E' : 'transparent',
+                        color: selectedType !== 1 ? '#fff' : '#00302E',
+
+                    }}
+                >
+                    Services
+                </StyledFAQTypeSwitch>
+
+                <StyledFAQTypeSwitch
+                    onClick={() => setSelectedType(2)}
+                    sx={{
+                        background: selectedType !== 2 ? '#00302E' : 'transparent',
+                        color: selectedType !== 2 ? '#fff' : '#00302E',
+
+
+                    }}
+                >
+                    Results
+                </StyledFAQTypeSwitch>
+            </StyledFAQPageTop>
+
             <StyledFAQPageQuestionsList>
-                {questions.map((item: any, index: number) => (
+                {questions.filter((item: any) => selectedType === 1? item.type === 1 : item.type === 2).map((item: any, index: number) => (
                     <StyledFAQPageCell
                         key={item.id}
                     >

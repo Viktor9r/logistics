@@ -23,7 +23,7 @@ import EmailIcon from "@mui/icons-material/EmailOutlined";
 import { useOpenQuoteDialog } from "../../Storages/useOpenQuoteDialog";
 import { MainPageOptionsQuoteButton } from "../MainPageOptions/styled";
 import { servicesList } from "../../resources/data/arrays";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface IProps { }
 
@@ -58,26 +58,29 @@ export const AppHeader: React.FC<IProps> = () => {
                         <HeaderRightPart>
                             {!mobile && (
                                 <>
-                                    <HeaderLink to="mailto:info@fcmmovers.com">
+                                    <HeaderLink to="mailto:info@easydispatch.net">
                                         <HeaderIcon>
                                             <EmailIcon />
                                         </HeaderIcon>
-                                        info@fcmmovers.com
+                                        info@easydispatch.net
                                     </HeaderLink>
                                     <HeaderPipe />
-                                    <HeaderLink to="tel:4378989777">
+                                    <HeaderLink to="tel:8779329272">
                                         <HeaderIcon>
                                             <PhoneIphoneOutlined />
                                         </HeaderIcon>
-                                        +1 (437) 898-9777
+                                        +1 (877) 932 -9272
                                     </HeaderLink>
                                     <HeaderPipe />
                                     <MainPageOptionsQuoteButton
                                         sx={{
-                                            height: '44px'
+                                            height: '44px',
                                         }}
-                                        onClick={() => setOpenQuoteDialog(true)}>
-                                        Free quote
+                                        to={'https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7'}
+                                        target='_blank'
+                                    >
+
+                                        Contact Us
                                     </MainPageOptionsQuoteButton>
                                 </>
                             )}
@@ -119,7 +122,7 @@ export const AppHeader: React.FC<IProps> = () => {
                     {servicesList.map((item: any) => (
                         <MobileHeaderLinksLink
                             key={item.id}
-                            to={item.link}
+                            to={'/services'}
                             sx={{
                                 textDecoration: item.link === location.pathname ? 'underline' : 'none'
                             }}
@@ -164,7 +167,7 @@ export const AppHeader: React.FC<IProps> = () => {
                         //     fill: '#fff'
                         // }
                     }}
-                    onClick={() => window.location.href = 'mailto:info@fcmmovers.com'}
+                    onClick={() => window.location.href = 'mailto:info@easydispatch.net'}
                     to=''
                 >
                     <HeaderIcon sx={{
@@ -173,7 +176,7 @@ export const AppHeader: React.FC<IProps> = () => {
                     }}>
                         <EmailIcon />
                     </HeaderIcon>
-                    info@fcmmovers.com
+                    info@easydispatch.net
                 </HeaderLink>
 
                 <HeaderLink
@@ -182,7 +185,7 @@ export const AppHeader: React.FC<IProps> = () => {
                         fontSize: '18px !important',
                         marginBottom: '50px',
                     }}
-                    to='tel:4378989777'
+                    to='tel:8779329272'
                 >
                     <HeaderIcon sx={{
                         mr: 1,
@@ -190,20 +193,23 @@ export const AppHeader: React.FC<IProps> = () => {
                     }}>
                         <PhoneIphoneOutlined />
                     </HeaderIcon>
-                    +1 (437) 898-9777
+                    +1 (877) 932 -9272
                 </HeaderLink>
 
                 <MainPageOptionsQuoteButton
                     sx={{
                         color: '#fff',
                         border: '2px solid #fff',
+                        lineHeight: '60px',
+                        textAlign: 'center'
                     }}
                     onClick={() => {
                         setShowMobileMenu(false)
-                        setOpenQuoteDialog(true)
                     }}
+                    to={'https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7'}
+                    target='_blank'
                 >
-                    Free quote
+                    Contact Us
                 </MainPageOptionsQuoteButton>
             </MobileHeaderMenu>
         </>

@@ -1,68 +1,57 @@
 import React from "react";
-import { useOpenQuoteDialog } from "../../Storages/useOpenQuoteDialog";
-import { useSerivcePageDataStorage } from "../../Storages/useServicePageDataStorage"
 import { questionsList, servicesList } from "../../resources/data/arrays";
 import { CalculateSection } from "../Calculate/Calculate";
 import { AppOuterContainer } from "../DesktopLayout/styled"
-import { FAQPage } from "../FAQ/FAQ";
 import { Footer } from "../Footer/Footer";
-import { FormPage } from "../Form/Form";
 import { MainPageOptions } from "../MainPageOptions/MainPageOptions"
-import { ServiceBenefits } from "./Benefits/Benefits";
 import { StyledServicePageMain, StyledServicePageAbout, StyledServicePageSubTitle, StyledServicePageTitle, StyledServicePageTop, StyledServicePageTopButton, StyledServicePageAboutContent, StyledServicePageAboutRight, StyledServicePageAboutImage } from "./styled";
 import { useMediaQuery } from "@mui/material";
 import { MobileBottomBar } from "../MobileBottomBar/MobileBottomBar";
+import background from '../../resources/images/servicesBackground.png';
 
 export const ServicePage: React.FC = () => {
 
     const mobile = useMediaQuery('(max-width:1000px)');
 
-    const {
-        visibleService
-    } = useSerivcePageDataStorage();
+    return (
+        <AppOuterContainer>
+            {!mobile && (
+                <MainPageOptions />
+            )}
 
-    const { setOpenQuoteDialog } = useOpenQuoteDialog()
+            <StyledServicePageMain
+                background={background}
+            >
+                <StyledServicePageTop sx={{ width: mobile ? '100%' : '900px' }}>
+                    <StyledServicePageTitle sx={{ textAlign: 'center' }}>
+                        Easy Dispatch – Strong Back-Office Support for Your Business
+                    </StyledServicePageTitle>
 
-    const jsonServices = servicesList;
+                    <StyledServicePageSubTitle sx={{ textAlign: 'center' }}>
+                        We take care of all administrative tasks, allowing you to focus on driving and making money. Our full-service package includes:
+                    </StyledServicePageSubTitle>
 
-    const service = jsonServices.find((item: any) => item.id === visibleService)
+                    {!mobile && (
+                        <StyledServicePageTopButton
+                            to="https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7"
+                            target="_blank"
+                        >
+                            Contact us
+                        </StyledServicePageTopButton>
+                    )}
+                </StyledServicePageTop>
+            </StyledServicePageMain>
 
-    if (service) {
-        return (
-            <AppOuterContainer>
-                {!mobile && (
-                    <MainPageOptions />
-                )}
-
-                <StyledServicePageMain
-                    background={service!.gallery[0].photo}
-                >
-                    <StyledServicePageTop>
-                        <StyledServicePageTitle>
-                            {service?.title}
-                        </StyledServicePageTitle>
-
-                        <StyledServicePageSubTitle>
-                            {service?.subTitle}
-                        </StyledServicePageSubTitle>
-
-                        {!mobile && (
-                            <StyledServicePageTopButton
-                                onClick={() => setOpenQuoteDialog(true)}
-                            >
-                                Free quote
-                            </StyledServicePageTopButton>
-                        )}
-                    </StyledServicePageTop>
-                </StyledServicePageMain>
-
+            {servicesList.map((service: any, index: number) => (
                 <StyledServicePageAbout>
                     <StyledServicePageAboutContent>
                         <StyledServicePageAboutImage
                             background={service!.gallery[1].photo}
                         />
 
-                        <StyledServicePageAboutRight>
+                        <StyledServicePageAboutRight
+
+                        >
                             <StyledServicePageTitle sx={{
                                 color: '#fff',
                                 padding: '20px',
@@ -88,7 +77,8 @@ export const ServicePage: React.FC = () => {
                                     <React.Fragment key={index}>
                                         <span
                                             style={{
-                                                fontWeight: line.includes("1. Consolidated Shipping") ? 600 : line.includes("2. Exclusive Express Long") ? 600 : 400
+                                                fontWeight: line.includes("The Core of Your Business") ? 600 : line.includes("Why Our Dispatching Stands Out:") ? 600 :  line.includes("Why Our Dispatching Stands Out:") ? 600 : line.includes("Get Paid Fast & Stay") ? 600 : line.includes("What We Handle:") ? 600 : line.includes("Stay Legal, Stay Safe") ? 600 : line.includes("How We Keep You Safe & Compliant:") ? 600 : line.includes("Help Anytime, Anywhere – Because Trucking Never Stops") ? 600 : line.includes("How Our 24/7 Support Helps You") ? 600 : 400,
+                                                fontSize: line.includes("The Core of Your Business") ? '24px' : line.includes("Get Paid Fast & Stay Tax Compliant") ? '24px' : line.includes("Stay Legal, Stay Safe, and Keep Moving") ? '24px' : line.includes("Help Anytime, Anywhere – Because Trucking Never Stops") ? '24px' : '16px'
                                             }}
                                         >{line}</span>
                                         <br />
@@ -98,25 +88,16 @@ export const ServicePage: React.FC = () => {
                         </StyledServicePageAboutRight>
                     </StyledServicePageAboutContent>
                 </StyledServicePageAbout>
+            ))}
 
-                <ServiceBenefits benefits={service.benefits} />
+            <CalculateSection />
 
-                <CalculateSection />
+            <Footer servicesList={servicesList} />
 
-                <FAQPage questions={[...questionsList.filter((item: any) => item.type === service.id)]} />
+            {mobile && (
+                <MobileBottomBar />
+            )}
+        </AppOuterContainer>
+    )
 
-                {!mobile && (
-                    <FormPage />
-                )}
-
-                <Footer servicesList={servicesList} />
-
-                {mobile && (
-                    <MobileBottomBar />
-                )}
-            </AppOuterContainer>
-        )
-    }
-
-    return <></>
 }

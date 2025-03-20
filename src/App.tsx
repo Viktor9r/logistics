@@ -17,23 +17,8 @@ function App() {
   const { setVisibleService } = useSerivcePageDataStorage()
 
   useEffect(() => {
-    if (location.pathname.includes('long-distance')) {
+    if (location.pathname.includes('services')) {
       setVisibleService(servicesList[0].id)
-    }
-    if (location.pathname.includes('toronto-local-moving')) {
-      setVisibleService(servicesList[1].id)
-    }
-    if (location.pathname.includes('toronto-storage-moving')) {
-      setVisibleService(servicesList[2].id)
-    }
-    if (location.pathname.includes('toronto-commercial-moving')) {
-      setVisibleService(servicesList[3].id)
-    }
-    if (location.pathname.includes('toronto-special-items-moving')) {
-      setVisibleService(servicesList[4].id)
-    }
-    if (location.pathname.includes('packing')) {
-      setVisibleService(servicesList[5].id)
     }
   }, [location, setVisibleService]);
 
@@ -56,37 +41,7 @@ function App() {
         <Route path='/faq-page' element={<FAQPage />} />
         <Route
           path={
-            '/services/toronto-long-distance-moving'
-          }
-          element={<ServicePage />}
-        />
-        <Route
-          path={
-            '/services/toronto-local-moving'
-          }
-          element={<ServicePage />}
-        />
-        <Route
-          path={
-            '/services/toronto-storage-moving'
-          }
-          element={<ServicePage />}
-        />
-        <Route
-          path={
-            '/services/toronto-commercial-moving'
-          }
-          element={<ServicePage />}
-        />
-        <Route
-          path={
-            '/services/toronto-special-items-moving'
-          }
-          element={<ServicePage />}
-        />
-        <Route
-          path={
-            '/services/toronto-packing-service'
+            '/services'
           }
           element={<ServicePage />}
         />

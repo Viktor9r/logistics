@@ -11,18 +11,24 @@ export const CalculateSection: React.FC = () => {
             <StyledCalculateSectionContent>
                 <StyledCalculateSectionLeft>
                     <StyledCalculateSectionTitle>
-                        Calculate your move for free!
+                        Our Offer!
                     </StyledCalculateSectionTitle>
 
                     <StyledCalculateSectionSubTitle>
-                        Get an estimate for your move right now! Call us to consult with our experts about your move.
+                        We guarantee $30,000+ gross revenue in 30 days,.If we don't perform, you don't pay. Simple as that.
+                        <br />
+                        <br />
+                        We take care of everything — finding high-paying loads, handling compliance, invoicing, and providing 24/7 support — so you can focus on driving and earning
                     </StyledCalculateSectionSubTitle>
                 </StyledCalculateSectionLeft>
 
                 <StyledCalculateSectionRight>
                     {!mobile && (
-                        <StyledCalculateSectionQuoteButton onClick={() => setOpenQuoteDialog(true)}>
-                            Get a quote
+                        <StyledCalculateSectionQuoteButton
+                            to="https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7"
+                            target='_blank'
+                        >
+                            Contact Us
                         </StyledCalculateSectionQuoteButton>
                     )}
                 </StyledCalculateSectionRight>

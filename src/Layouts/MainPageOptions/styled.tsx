@@ -15,9 +15,9 @@ export const StyledMainPageOptions = styled('section')(() => ({
 
 export const MainPageOptionsList = styled('ul')(() => ({
     display: 'flex',
-    gap: '20px',
+    gap: '100px',
     alignItems: 'center',
-    width: '100%',
+    width: 'fit-content',
     margin: '0 auto',
     justifyContent: 'space-between',
     color: '#00302E',
@@ -35,7 +35,7 @@ export const MainPageOptionsListItem = styled(Link)(() => ({
     }
 }))
 
-export const MainPageOptionsQuoteButton = styled(Button)(() => ({
+export const MainPageOptionsQuoteButton = styled(Link)(() => ({
     height: '60px',
     padding: '0 26px',
     minWidth: '10%',
@@ -46,9 +46,11 @@ export const MainPageOptionsQuoteButton = styled(Button)(() => ({
     textTransform: 'none',
     fontSize: '16px',
     border: '1px solid #00302E',
+    textDecoration: 'none',
+    lineHeight: '44px',
+    transition: '0.3s',
 
     [':hover']: {
-        boxSizing: 'border-box',
         background: '#fff',
         color: '#00302E',
     }

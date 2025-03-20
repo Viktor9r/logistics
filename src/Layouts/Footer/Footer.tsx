@@ -1,10 +1,13 @@
-import { KeyboardArrowUp } from "@mui/icons-material"
+import { Facebook, Instagram, KeyboardArrowUp, YouTube } from "@mui/icons-material"
+import { ReactComponent as TikTokIcon } from '../../resources/icons/logo-tiktok.svg';
+
 import { StyledFooter, StyledFooterColumn, StyledFooterColumnContent, StyledFooterColumnFlexRow, StyledFooterColumnGreyText, StyledFooterColumnService, StyledFooterColumnTitle, StyledFooterContent, StyledFooterIconCell, StyletMobileFooterLogo } from "./styled"
 import { HeaderLink, HeaderIcon, HeaderPipe } from "../AppHeader/styled";
 import EmailIcon from '@mui/icons-material/EmailOutlined';
 import { PhoneIphoneOutlined } from "@mui/icons-material";
 import { useMediaQuery } from "@mui/material";
 import logo from '../../resources/images/finallogo.png'
+import { Link } from "react-router-dom";
 
 interface IProps {
     servicesList: any
@@ -25,7 +28,7 @@ export const Footer: React.FC<IProps> = ({ servicesList }) => {
                             }
                         }}
                     >
-                        <StyletMobileFooterLogo src={logo} />
+                        <StyletMobileFooterLogo sx={{ transform: 'scale(2)' }} src={logo} />
                     </StyledFooterColumn>
                 )}
                 <StyledFooterColumn
@@ -39,7 +42,7 @@ export const Footer: React.FC<IProps> = ({ servicesList }) => {
                     }}
                 >
                     <StyledFooterColumnTitle>
-                        First Class Movers
+                        Easy Dispatch
                     </StyledFooterColumnTitle>
 
                     <StyledFooterColumnContent
@@ -48,7 +51,7 @@ export const Footer: React.FC<IProps> = ({ servicesList }) => {
                         }}
                     >
                         <StyledFooterColumnGreyText>
-                            Copyright © First Class Movers
+                            Copyright © Easy Dispatch
                         </StyledFooterColumnGreyText>
                     </StyledFooterColumnContent>
                 </StyledFooterColumn>
@@ -73,7 +76,7 @@ export const Footer: React.FC<IProps> = ({ servicesList }) => {
                     >
                         {servicesList.map((item: any) => (
                             <StyledFooterColumnService
-                                to={item.link}
+                                to={'/services'}
                                 key={item.id}
                                 onClick={() => window.scrollTo({ top: 0 })}
                             >
@@ -129,11 +132,11 @@ export const Footer: React.FC<IProps> = ({ servicesList }) => {
                             }}
                         >
                             <HeaderLink
-                                onClick={() => window.location.href = 'mailto:info@fcmmovers.com'}
+                                onClick={() => window.location.href = 'mailto:info@easydispatch.net'}
                                 to=''
                             >
                                 <HeaderIcon sx={{
-                                    mr: 1,
+                                    mr: 0.5,
                                     mb: '1px',
                                     ['@media (max-height: 799px) and (min-width: 1024px)']: {
                                         mr: 1
@@ -141,16 +144,16 @@ export const Footer: React.FC<IProps> = ({ servicesList }) => {
                                 }}>
                                     <EmailIcon />
                                 </HeaderIcon>
-                                info@fcmmovers.com
+                                info@easydispatch.net
                             </HeaderLink>
                             {!mobile && (
                                 <HeaderPipe sx={{ margin: '0 6px' }} />
                             )}
                             <HeaderLink
-                                to='tel:4378989777'
+                                to='tel:8779329272'
                             >
                                 <HeaderIcon sx={{
-                                    mr: 1,
+                                    mr: 0.5,
                                     mb: '1px',
                                     ['@media (max-height: 799px) and (min-width: 1024px)']: {
                                         mr: 1
@@ -158,9 +161,79 @@ export const Footer: React.FC<IProps> = ({ servicesList }) => {
                                 }}>
                                     <PhoneIphoneOutlined />
                                 </HeaderIcon>
-                                +1(437)898-9777
+                                +1(877)932-9272
                             </HeaderLink>
                         </StyledFooterColumnFlexRow>
+
+                        <div
+                            style={{
+                                display: 'flex',
+                                gap: mobile ? '24px' : '36px',
+                                alignItems: 'center',
+                                justifyContent: mobile ? 'center' : 'flex-start',
+                                marginTop: '24px'
+                            }}
+                        >
+                            <HeaderLink
+                                to={'https://youtube.com/@easydispatchh?si=VELxduVGvCYFtBDE'}
+                                target="_blank"
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    gap: '18px'
+                                }}
+                            >
+                                <YouTube style={{ transform: 'scale(2)', fill: '#00302E' }} />
+                                Youtube
+                            </HeaderLink>
+
+                            <HeaderLink
+                                to={'https://www.facebook.com/share/1E9FMRqnbu/?mibextid=wwXIfr'}
+                                target="_blank"
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    gap: '18px'
+                                }}
+                            >
+                                <Facebook style={{ transform: 'scale(2)', fill: '#00302E' }} />
+                                Facebook
+                            </HeaderLink>
+
+                            <HeaderLink
+                                to={'https://www.instagram.com/easydispatchh?igsh=MW1iMXg1NTZneWh1aw%3D%3D&utm_source=qr'}
+                                target="_blank"
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    gap: '18px'
+                                }}
+                            >
+                                <Instagram style={{ transform: 'scale(2)', fill: '#00302E' }} />
+                                Instagram
+                            </HeaderLink>
+
+                            <HeaderLink
+                                to={'https://www.tiktok.com/@easydispatchh?is_from_webapp=1&sender_device=pc'}
+                                target="_blank"
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    gap: '18px'
+                                }}
+                            >
+                                <TikTokIcon style={{ transform: 'scale(0.85)', fill: '#00302E', }} />
+                                <span style={{ transform: 'translateY(-12px)' }}>TikTok</span>
+                            </HeaderLink>
+                        </div>
                     </StyledFooterColumnContent>
                 </StyledFooterColumn>
 

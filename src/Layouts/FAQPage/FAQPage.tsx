@@ -19,6 +19,7 @@ import { Footer } from "../Footer/Footer"
 import { LocationPage } from "../Location/Location"
 import { MobileBottomBar } from "../MobileBottomBar/MobileBottomBar"
 import { useMediaQuery } from "@mui/material"
+import { CalculateSection } from "../Calculate/Calculate"
 
 export const FAQPage: React.FC = () => {
     const { setOpenQuoteDialog } = useOpenQuoteDialog()
@@ -42,15 +43,16 @@ export const FAQPage: React.FC = () => {
                         Frequently Asked Questions
                     </StyledServicePageTitle>
 
-                    <StyledServicePageSubTitle>
-                        You can find answers to the most common questions on this page
+                    <StyledServicePageSubTitle sx={{ textAlign: 'center' }}>
+                        We know truckers have a lot of questions when choosing a dispatch service. Here are the answers to the most common ones.
                     </StyledServicePageSubTitle>
 
                     {!mobile && (
                         <StyledServicePageTopButton
-                            onClick={() => setOpenQuoteDialog(true)}
+                            to="https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7"
+                            target="_blank"
                         >
-                            Free quote
+                            Contact Us
                         </StyledServicePageTopButton>
                     )}
                 </StyledServicePageTop>
@@ -86,7 +88,13 @@ export const FAQPage: React.FC = () => {
                             }
                         }}
                     >
-                        <TrustPageOptionsQuoteButton onClick={() => setOpenQuoteDialog(true)}>Get a quote</TrustPageOptionsQuoteButton>
+                        <TrustPageOptionsQuoteButton
+
+                            to=" https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7"
+                            target='_blank'
+                        >
+                            Contact Us
+                        </TrustPageOptionsQuoteButton>
 
                         <StyledFAQPageTopRight
 
@@ -130,57 +138,52 @@ export const FAQPage: React.FC = () => {
                 </StyledFAQPageTop>
 
                 <QuestionsList
-                    questions={[...questionsArr.filter((item: any) => item.type === 0), ...questionsArr.filter((item: any) => item.type === 8)]}
+                    questions={[...questionsArr.filter((item: any) => item.type === 3)]}
                     category={'General'}
                 />
 
                 <QuestionsList
-                    questions={[...questionsArr.filter((item: any) => item.type === 8)]}
-                    category={'Cost and Pricing policies'}
+                    questions={[...questionsArr.filter((item: any) => item.type === 1)]}
+                    category={'Services'}
                 />
 
                 <QuestionsList
-                    questions={[...questionsArr.filter((item: any) => item.type === 9)]}
-                    category={'Insurance'}
-                />
-
-                <QuestionsList
-                    questions={questionsArr.filter((item: any) => item.type === 1)}
-                    category={'Long-distance moving'}
-                />
-
-                <QuestionsList
-                    questions={questionsArr.filter((item: any) => item.type === 2)}
-                    category={'Local moving'}
-                />
-
-                <QuestionsList
-                    questions={questionsArr.filter((item: any) => item.type === 3)}
-                    category={'Storage'}
+                    questions={[...questionsArr.filter((item: any) => item.type === 2)]}
+                    category={'Results'}
                 />
 
                 <QuestionsList
                     questions={questionsArr.filter((item: any) => item.type === 4)}
-                    category={'Commercial relocation'}
+                    category={'Dispatch & Load Booking'}
                 />
 
                 <QuestionsList
                     questions={questionsArr.filter((item: any) => item.type === 5)}
-                    category={'Special items moving'}
+                    category={'Billing & Invoicing'}
                 />
 
                 <QuestionsList
                     questions={questionsArr.filter((item: any) => item.type === 6)}
-                    category={'Packing'}
+                    category={'Safety & Compliance'}
+                />
+
+                <QuestionsList
+                    questions={questionsArr.filter((item: any) => item.type === 7)}
+                    category={'24/7 Support'}
+                />
+
+                <QuestionsList
+                    questions={questionsArr.filter((item: any) => item.type === 8)}
+                    category={'MC Reputation & Business Growth'}
+                />
+
+                <QuestionsList
+                    questions={questionsArr.filter((item: any) => item.type === 9)}
+                    category={'Getting Started with Easy Dispatch'}
                 />
             </StyledFAQPage>
 
-            <LocationPage />
-
-            {!mobile && (
-                <FormPage />
-
-            )}
+            <CalculateSection />
 
             <Footer servicesList={servicesList} />
 

@@ -53,11 +53,11 @@ export const HeaderLeftPart = styled(Link)(() => ({
 }))
 
 export const HeaderLogo = styled('img')(() => ({
-    width: '70px',
+    width: '120px',
     cursor: 'pointer',
 
     ['@media (max-width: 1000px)']: {
-        width: '50px'
+        width: '80px'
     }
 }))
 
@@ -110,6 +110,7 @@ export const HeaderLangValue = styled('h5')(() => ({
 }))
 
 export const MobileHeaderButton = styled('button')(() => ({
+    background: '#fff',
     ['svg']: {
         fill: '#00302E',
         transform: 'scale(1.35)'

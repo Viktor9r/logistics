@@ -1,11 +1,14 @@
 import { StyledServiceCell, StyledServiceCellAbout, StyledServiceCellLeft, StyledServiceCellRight, StyledServiceCellTitle, StyledServiceIconCell, StyledServiceIconLink, StyledServicesPage, StyledServicesPageList, StyledServicesPageSubTitle, StyledServicesPageTitle, StyledServicesPageTop } from "./styled"
 import { ReactComponent as ExpandIcon } from '../../resources/icons/expand.svg';
+import { StyledTrustPageTitle } from "../Trust/styled";
+import { useMediaQuery } from "@mui/material";
 
 interface IProps {
     servicesList: any
 };
 
 export const Services: React.FC<IProps> = ({ servicesList }) => {
+    const mobile = useMediaQuery('(max-width:1000px)');
 
     return (
         <StyledServicesPage>
@@ -14,14 +17,35 @@ export const Services: React.FC<IProps> = ({ servicesList }) => {
                     Services we offer
                 </StyledServicesPageTitle>
 
-                <StyledServicesPageSubTitle>
-                    Our services offer unique opportunities for those seeking to embark on a new journey.
+                <StyledServicesPageSubTitle
+                    sx={{
+                        maxWidth: '44%'
+                    }}
+                >
+                    <StyledTrustPageTitle
+                        sx={{
+                            fontSize: '24px',
+                            marginBottom: '16px',
+                            maxWidth: '100%'
+                        }}
+                    >
+                        Complete back-office support.
+                    </StyledTrustPageTitle>
+                    We offer the most complete back-office support system in the country.Our owner operators never have to stress about getting paid on time, tracking load revenue, staying compliant with FMCSA, and much, MUCH more.
+                    <br />
+                    <br />
+                    Average cost-per-sale reduction: 65%
                 </StyledServicesPageSubTitle>
             </StyledServicesPageTop>
 
             <StyledServicesPageList>
-                {servicesList.map((item: any) => (
+                {servicesList.slice(0, 4).map((item: any) => (
                     <StyledServiceCell
+                        sx={{
+                            padding: '40px 20px',
+                            minWidth: mobile ? 'calc(100% / 2 - 44px)' : 'calc(100% / 2 - 46px)',
+                            maxWidth: mobile ? 'calc(100% / 2 - 44px)' : 'calc(100% / 2 - 46px)',
+                        }}
                         key={item.id}
                     >
                         <StyledServiceCellLeft>
@@ -29,7 +53,11 @@ export const Services: React.FC<IProps> = ({ servicesList }) => {
                                 {item.title}
                             </StyledServiceCellTitle>
 
-                            <StyledServiceCellAbout>
+                            <StyledServiceCellAbout
+                                sx={{
+                                    wordBreak: 'normal'
+                                }}
+                            >
                                 {item.subTitle}
                             </StyledServiceCellAbout>
                         </StyledServiceCellLeft>

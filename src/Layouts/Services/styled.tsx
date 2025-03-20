@@ -71,8 +71,8 @@ export const StyledServicesPageList = styled('ul')(() => ({
 }))
 
 export const StyledServiceCell = styled('li')(() => ({
-    minWidth: 'calc(100% / 3 - 46px)',
-    maxWidth: 'calc(100% / 3 - 46px)',
+    minWidth: 'calc(100% / 2 - 46px)',
+    maxWidth: 'calc(100% / 2 - 46px)',
     background: '#fff',
     padding: '20px',
     borderRadius: '20px',
@@ -83,8 +83,6 @@ export const StyledServiceCell = styled('li')(() => ({
     ['@media (max-width: 1000px)']: {
         flexDirection: 'column',
         // height: "fit-content",
-        minWidth: 'calc(100% / 2 - 44px)',
-        maxWidth: 'calc(100% / 2 - 44px)',
         borderRadius: '30px',
     }
 }))
@@ -108,7 +106,8 @@ export const StyledServiceCellTitle = styled('h3')(({
     height: '44px',
 
     ['@media (max-width: 1000px)']: {
-        fontSize: '20px'
+        fontSize: '20px',
+        wordBreak: 'break-all'
     }
 }))
 

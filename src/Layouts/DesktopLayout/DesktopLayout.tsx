@@ -9,9 +9,12 @@ import { FAQPage } from "../FAQ/FAQ";
 import { LocationPage } from "../Location/Location";
 import { FormPage } from "../Form/Form";
 import { Footer } from "../Footer/Footer";
-import { questionsList, servicesList } from "../../resources/data/arrays";
+import { questionsList, servicesList, trustList } from "../../resources/data/arrays";
 import { useMediaQuery } from "@mui/material";
 import { MobileBottomBar } from "../MobileBottomBar/MobileBottomBar";
+import { EquipmentPage } from "../Equipment/Equipment";
+import { ResultsPage } from "../Results/Results";
+import { ChargesPage } from "../Charges/Charges";
 
 export const DesktopLayout: React.FC = () => {
 
@@ -23,24 +26,18 @@ export const DesktopLayout: React.FC = () => {
                 {!mobile && (
                     <MainPageOptions />
                 )}
-                {/* <div style={{height: '300vh'}}></div> */}
                 <MainPage />
-                {/* {mobile && (
-                    <MobileForm />
-                )} */}
                 <Services servicesList={servicesList} />
-                <TrustPage />
-                <CalculateSection />
+                <EquipmentPage />
+                <TrustPage trustList={trustList} />
+                <ResultsPage />
 
                 {/* <AboutPage /> */}
+                <ChargesPage />
+                <CalculateSection />
 
-                <ReviewsSection />
-                <FAQPage questions={questionsList.filter((item: any) => item.type === 0).slice(0, 5)} />
-                <LocationPage />
+                <FAQPage questions={questionsList} />
 
-                {!mobile && (
-                    <FormPage />
-                )}
                 <Footer servicesList={servicesList} />
 
                 {mobile && (

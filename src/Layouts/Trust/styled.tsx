@@ -1,4 +1,5 @@
 import { Button, styled } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const StyledTrustPage = styled('section')(() => ({
     margin: '0 auto',
@@ -64,22 +65,24 @@ export const StyledTrustPageSubTitle = styled('p')(() => ({
     }
 }));
 
-export const TrustPageOptionsQuoteButton = styled(Button)(() => ({
+export const TrustPageOptionsQuoteButton = styled(Link)(() => ({
     height: '60px',
     padding: '0 26px',
-    minWidth: '10%',
-    color: '#fff',
+    color: '#fff !important',
     fontWeight: 600,
     background: '#00302E',
     borderRadius: '30px',
     textTransform: 'none',
     fontSize: '16px',
     border: '1px solid #00302E',
-    
+    lineHeight: '60px',
+    textDecoration: 'none',
+    textAlign: 'center',
+    transition: '0.3s',
+
     [':hover']: {
-        boxSizing: 'border-box',
         background: '#e3e3e3',
-        color: '#00302E',
+        color: '#00302E !important',
     }
 }))
 
@@ -104,7 +107,7 @@ export const StyledTrustPageCell = styled('li')(() => ({
     flexDirection: 'column',
     alignItems: 'flex-start',
     gap: '18px',
-    width: 'calc(20%)',
+    width: 'calc(25%)',
     borderRight: '2px solid #e3e3e3',
     margin: '20px 0',
     padding: '0 20px',
@@ -150,5 +153,24 @@ export const StyledTrustIconCell = styled('div')(() => ({
         width: '34xpx',
         height: '34px',
         transform: 'scale(1.4)'
+    }
+}))
+
+export const StyledTrustIcon = styled('div')(() => ({
+    aspectRatio: '1/1',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    background: '#e3e3e3',
+    border: '1px solid #e3e3e3',
+    borderRadius: '20px',
+    height: '52px',
+    width: '52px',
+    transition: '0.3s',
+
+    ['svg']: {
+        fill: '#00302E',
+        width: '34xpx',
+        height: '34px'
     }
 }))

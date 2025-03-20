@@ -1,5 +1,6 @@
 import { Button, styled } from "@mui/material";
 import greentruck from '../../resources/images/greentruck.png'
+import { Link } from "react-router-dom";
 
 export const StyledCalculateSection = styled('section')(() => ({
     margin: '0 auto',
@@ -78,9 +79,11 @@ export const StyledCalculateSectionRight = styled('div')(() => ({
     }
 }))
 
-export const StyledCalculateSectionQuoteButton = styled(Button)(() => ({
+export const StyledCalculateSectionQuoteButton = styled(Link)(() => ({
     position: 'absolute',
     height: '60px',
+    lineHeight: '60px',
+    textDecoration: 'none',
     padding: '0 26px',
     minWidth: '10%',
     color: '#00302E',

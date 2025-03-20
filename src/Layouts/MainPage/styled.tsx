@@ -35,7 +35,8 @@ export const StyledMainPageTop = styled('div')(() => ({
 
     ['@media (max-width: 1000px)']: {
         flexDirection: 'column',
-        gap: '24px',
+        maxWidth: '100%',
+        gap: '0px',
         alignItems: 'flex-start',
     }
 }))
@@ -44,14 +45,16 @@ export const StyledMainPageTitle = styled('h1')(() => ({
     color: '#fff',
     fontWeight: 600,
     fontSize: '44px',
-    maxWidth: '600px',
+    width: '900px',
+    margin: 'auto',
     backdropFilter: 'blur(14px)',
     borderRadius: '40px',
     padding: '16px 20px',
-    transform: 'translateX(-20px)',
+    textAlign: 'center',
 
     ['@media (max-width: 1000px)']: {
         maxWidth: '100%',
+        width: 'fit-content',
         transform: 'none',
         fontSize: '30px',
         paddingBottom: '24px',
@@ -243,6 +246,7 @@ export const StyledFormSubmit = styled(Button)(() => ({
     borderRadius: '20px',
     border: '2px solid #00302E',
     marginTop: '24px',
+    fontFamily: 'Montserrat, sans-serif',
 
     [':hover']: {
         color: '#fff',

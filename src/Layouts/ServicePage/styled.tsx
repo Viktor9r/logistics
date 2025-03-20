@@ -1,4 +1,5 @@
 import { Button, styled } from "@mui/material";
+import { Link } from "react-router-dom";
 
 interface IBackground {
     background: string
@@ -67,7 +68,7 @@ export const StyledServicePageSubTitle = styled('h4')(() => ({
     fontWeight: 500,
 }))
 
-export const StyledServicePageTopButton = styled(Button)(() => ({
+export const StyledServicePageTopButton = styled(Link)(() => ({
     width: '100%',
     height: '60px',
     background: '#00302E',
@@ -78,6 +79,10 @@ export const StyledServicePageTopButton = styled(Button)(() => ({
     borderRadius: '20px',
     border: '2px solid #00302E',
     marginTop: '20px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    lineHeight: '60px',
+    transition: '0.3s',
 
     [':hover']: {
         color: '#fff',

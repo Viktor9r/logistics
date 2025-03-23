@@ -1,6 +1,6 @@
 {
-  "name": "moving",
-  "homepage": "/",
+  "name": "logistics",
+  "homepage": "https://Viktor9r.github.io/logistics",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -60,6 +60,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.3.0"
   }
 }

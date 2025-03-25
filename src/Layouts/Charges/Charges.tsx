@@ -32,7 +32,7 @@ export const ChargesPage: React.FC = () => {
 
                     {!mobile && (
                         <TrustPageOptionsQuoteButton
-                            
+
                             to="https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7"
                             target='_blank'
                         >
@@ -65,7 +65,9 @@ export const ChargesPage: React.FC = () => {
 
                     <StyledServiceCellAbout
                         sx={{
-                            wordBreak: 'normal'
+                            wordBreak: 'normal',
+                            WebkitLineClamp: 3, /* number of lines to show */
+                            lineClamp: 3,
                         }}
                     >
                         Typically $70,000+ per year
@@ -95,7 +97,9 @@ export const ChargesPage: React.FC = () => {
 
                     <StyledServiceCellAbout
                         sx={{
-                            wordBreak: 'normal'
+                            wordBreak: 'normal',
+                            WebkitLineClamp: 3, /* number of lines to show */
+                            lineClamp: 3,
                         }}
                     >
                         Typically $65,000+ per year
@@ -128,7 +132,9 @@ export const ChargesPage: React.FC = () => {
 
                     <StyledServiceCellAbout
                         sx={{
-                            wordBreak: 'normal'
+                            wordBreak: 'normal',
+                            WebkitLineClamp: 3, /* number of lines to show */
+                            lineClamp: 3,
                         }}
                     >
                         Typically $50,000+ per year
@@ -162,7 +168,9 @@ export const ChargesPage: React.FC = () => {
 
                     <StyledServiceCellAbout
                         sx={{
-                            wordBreak: 'normal'
+                            wordBreak: 'normal',
+                            WebkitLineClamp: 3, /* number of lines to show */
+                            lineClamp: 3,
                         }}
                     >
                         Typically $50,000+ per year

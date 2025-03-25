@@ -56,7 +56,7 @@ export const StyledMainPageTitle = styled('h1')(() => ({
         maxWidth: '100%',
         width: 'fit-content',
         transform: 'none',
-        fontSize: '30px',
+        fontSize: '24px',
         paddingBottom: '24px',
         borderBottomRightRadius: 0,
         borderBottomLeftRadius: 0

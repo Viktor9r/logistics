@@ -97,6 +97,7 @@ export const StyledServiceCellLeft = styled('div')(() => ({
     ['@media (max-width: 1000px)']: {
         maxWidth: '100%',
         minWidth: '100%',
+        gap: '18px'
     }
 }))
 
@@ -106,8 +107,8 @@ export const StyledServiceCellTitle = styled('h3')(({
     height: '44px',
 
     ['@media (max-width: 1000px)']: {
-        fontSize: '20px',
-        wordBreak: 'break-all'
+        fontSize: '16px',
+        wordBreak: 'no-break'
     }
 }))
 

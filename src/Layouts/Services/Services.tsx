@@ -42,9 +42,9 @@ export const Services: React.FC<IProps> = ({ servicesList }) => {
                 {servicesList.slice(0, 4).map((item: any) => (
                     <StyledServiceCell
                         sx={{
-                            padding: '40px 20px',
-                            minWidth: mobile ? 'calc(100% / 2 - 44px)' : 'calc(100% / 2 - 46px)',
-                            maxWidth: mobile ? 'calc(100% / 2 - 44px)' : 'calc(100% / 2 - 46px)',
+                            padding: mobile ? '30px 16px' : '40px 20px',
+                            minWidth: mobile ? 'calc(100% / 2 - 36px)' : 'calc(100% / 2 - 46px)',
+                            maxWidth: mobile ? 'calc(100% / 2 - 36px)' : 'calc(100% / 2 - 46px)',
                         }}
                         key={item.id}
                     >

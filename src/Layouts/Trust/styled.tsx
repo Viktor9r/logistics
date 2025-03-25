@@ -114,10 +114,10 @@ export const StyledTrustPageCell = styled('li')(() => ({
 
     ['@media (max-width: 1000px)']: {
         // height: "fit-content",
-        width: 'calc(50% - 42px)',
+        width: 'calc(50% - 33px)',
         borderBottom: '2px solid #e3e3e3',
         margin: 0,
-        padding: '20px',
+        padding: '20px 16px',
         alignItems: 'center',
         textAlign: 'center'
     }

@@ -68,12 +68,11 @@ export const TrustPage: React.FC<IProps> = ({ trustList }) => {
                         key={item.id}
                         sx={{
                             alignItems: 'center',
-                            minWidth: mobile ? 'calc(100% / 2 - 48px)' : 'calc(100% / 3 - 50px)',
-                            maxWidth: mobile ? 'calc(100% / 2 - 48px)' : 'calc(100% / 3 - 50px)',
+                            padding: mobile ? '30px 16px' : '40px 20px',
+                            minWidth: mobile ? 'calc(100% / 2 - 40px)' : 'calc(100% / 2 - 46px)',
+                            maxWidth: mobile ? 'calc(100% / 2 - 40px)' : 'calc(100% / 2 - 46px)',
                             border: '2px solid white',
                             transition: '0.3s',
-                            padding: '40px 20px',
-
                             [':hover']: {
                                 border: hoveredId === item.id ? '2px solid #00302E' : '2px solid white'
                             }

@@ -45,7 +45,7 @@ export const MobileBottomBar: React.FC = () => {
                     style={{ textDecoration: 'none', color: 'white' }}
                     target='_blank'
                 >
-                    Free Quote
+                    Contact Us
                 </Link>
             </MobileBottomButton>
 

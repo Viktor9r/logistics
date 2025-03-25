@@ -58,7 +58,8 @@ export const StyledServicePageTitle = styled('h1')(() => ({
     fontSize: '44px',
 
     ['@media (max-width: 1000px)']: {
-        fontSize: '30px',
+        fontSize: '24px',
+        textAlign: 'center'
     }
 }))
 
@@ -66,6 +67,11 @@ export const StyledServicePageSubTitle = styled('h4')(() => ({
     color: '#fff',
     fontSize: '18px',
     fontWeight: 500,
+
+    ['@media (max-width: 1000px)']: {
+        fontSize: '14px',
+        textAlign: 'center'
+    }
 }))
 
 export const StyledServicePageTopButton = styled(Link)(() => ({

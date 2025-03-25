@@ -25,10 +25,10 @@ export const MainPage: React.FC = () => {
                 <StyledMainPageTitle>
                     Easydispatch - Less Paperwork.<br /> More Miles:<br /> Full Dispatch & Back-Office Support.
 
-                    <div style={{ fontSize: '18px', fontWeight: 500 }}>
+                    <h2 style={{ fontSize: mobile ? '14px' : '18px', fontWeight: 500 }}>
                         <br />
                         Stay loaded, stay paid, and stay compliant with our all-in-one dispatch service.
-                    </div>
+                    </h2>
                 </StyledMainPageTitle>
 
 
@@ -47,13 +47,21 @@ export const MainPage: React.FC = () => {
                         Download free eBook
                     </Link>
                 </StyledFormSubmit>
+                {mobile && (
+                    <div style={{
+                        width: '100%',
+                        height: '2px',
+                        background: 'white'
+                    }} />
+                )}
                 <StyledFormSubmit
                     startIcon={<ContactMailOutlined sx={{ marginRight: '10px' }} />}
                     sx={{
                         height: '70px',
                         fontSize: '22px',
                         borderTopLeftRadius: mobile ? '0' : '20px',
-                        borderTopRightRadius: mobile ? '0' : '20px'
+                        borderTopRightRadius: mobile ? '0' : '20px',
+                        marginTop: mobile ? '0px !important' : '24px',
                     }}
                 >
                     <Link to="https://share-na2.hsforms.com/2c3xTUNftSRa9rRTMzmeWxQ407au7" target="_blank" style={{ textDecoration: 'none', color: 'white' }}>

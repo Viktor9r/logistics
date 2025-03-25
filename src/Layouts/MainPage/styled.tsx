@@ -18,7 +18,7 @@ export const StyledMainPage = styled('section')(() => ({
     ['@media (max-width: 1000px)']: {
         marginTop: '70px',
         // height: "fit-content",
-        height: window.innerHeight - 84,
+        height: 'calc(100vh - 84px)',
         justifyContent: 'space-between',
         padding: '0'
     }

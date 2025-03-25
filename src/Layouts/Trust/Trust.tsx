@@ -69,8 +69,8 @@ export const TrustPage: React.FC<IProps> = ({ trustList }) => {
                         sx={{
                             alignItems: 'center',
                             padding: mobile ? '30px 16px' : '40px 20px',
-                            minWidth: mobile ? 'calc(100% / 2 - 40px)' : 'calc(100% / 2 - 46px)',
-                            maxWidth: mobile ? 'calc(100% / 2 - 40px)' : 'calc(100% / 2 - 46px)',
+                            minWidth: mobile ? 'calc(100% / 2 - 40px)' : 'calc(100% / 2 - 50px)',
+                            maxWidth: mobile ? 'calc(100% / 2 - 40px)' : 'calc(100% / 2 - 50px)',
                             border: '2px solid white',
                             transition: '0.3s',
                             [':hover']: {
